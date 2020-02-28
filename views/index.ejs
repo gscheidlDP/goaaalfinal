@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+
     <h1>Soccer lives at GOAAAL!</h1>
 
     <p>For all your soccer kit needs!</p>
-  </body>
-</html>
+
+<% if (products.length > 0) {%>
+      	<% products.forEach((product, index) => { %>
+<product>
+	<table>
+                        <tr>
+                            <td><%= product.prod_name %></td>
+                            <td><%= product.prod_desc %></td>
+                        </tr>
+                        <tr>
+                            <td><%= product.prod_price %></td>
+                            <td><%= product.prod_loc %></td>
+                        </tr>
+<tr>
+    <td><%= product.inv_count %></td>
+    <td><b>Add To Cart</b></td>
+                     </tr>
+		</table>
+            </product>
+                    <% }); %>
+        <% } else { %>
+            <p>No Products</p>
+        <% } %>
+
+

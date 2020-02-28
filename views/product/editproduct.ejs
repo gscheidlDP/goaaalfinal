@@ -1,0 +1,26 @@
+<h1>Edit Product Information</h1>
+
+<form action="/product/save" method="post" >
+	<p><input type="hidden" name="prod_id" value=<%= product.prod_id %> required> </p>
+	<p>Product Name: <input type="text" name="product_name" value="<%= product.product_name %>" required> </p>
+  	<p>Product Image: <input type="text" name="product_desc" value=<%= product.product_desc %> required> </p>
+	<p>Description: <textarea name="product_price" rows="10" cols="30"><%= product.product_price %></textarea> </p>
+	<p>Category ID: <input type="number" name="inv_count" value=<%= product.inv_count %> required> </p>
+	<p>Supplier ID: <input type="number" name="prod_loc" value=<%= product.prod_loc %> required> </p>
+	<p>Product Status: <select  name="status"  required>
+                        <option selected><%= product.status %></option>
+                        <option>Available</option>
+                        <option>Discontinued</option>
+                        <option>Future Plan</option>
+                        <option>On Order</option>
+						<option>Out of Stock</option>
+                    </select> </p>
+	<p>Sale Price: <input type="text" name="saleprice" value=<%= product.saleprice %> required>	 </p>
+	<p>Purchase Price: <input type="text" name="purchaseprice" value=<%= product.purchaseprice %> required> </p>
+	<p>Qty on Hand: <input type="number" name="qtyonhand" value=<%= product.qtyonhand %> required> </p>
+	<p>Reorder Point: <input type="number" name="reorderpoint" value=<%= product.reorderpoint %> required> </p>
+	<p>Reorder Qty: <input type="number" name="reorderqty" value=<%= product.reorderqty %> required> </p>
+
+	<button type="submit">Update Product</button>
+</form>
+
